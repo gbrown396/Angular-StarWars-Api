@@ -1,0 +1,15 @@
+    <select [(ngModel)]="select">
+        <option value='people'>Search People</option>
+        <option value='starships'>Search Ships</option>
+        <option value='films'>Search films</option>
+    </select>
+
+    <br />
+    <br />
+
+    <label>Search: </label>
+    <input type="text" [(ngModel)]="r2">
+    <button (click)="search(select,r2)">Search</button>
+    <div *ngIf="response">
+        <p>{{ response.results | json }}</p>
+    </div>
